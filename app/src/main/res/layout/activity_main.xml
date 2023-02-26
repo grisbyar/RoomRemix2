@@ -11,9 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/designbar">
 
 
         <ImageButton
@@ -36,6 +37,7 @@
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:background="@drawable/delete" />
+
         <ImageButton
             android:id="@+id/more_options"
             android:layout_width="50dp"
@@ -44,74 +46,107 @@
             android:background="@drawable/more_options" />
 
     </LinearLayout>
-    
+
     <LinearLayout
-        android:id="@+id/designbar"
+        android:id="@+id/design_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="612dp"
+        android:background="@drawable/borderoutline"
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/borderoutline">
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/couch"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/couch" />
+            android:background="@drawable/couch"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/table"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/table" />
+            android:background="@drawable/table"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/bed"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/bed" />
+            android:background="@drawable/bed"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/chair"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/chair" />
+            android:background="@drawable/chair"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/dresser"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/dresser" />
+            android:background="@drawable/dresser"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/television"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
             android:background="@drawable/television" />
+
         <ImageButton
             android:id="@+id/lamp"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/floor_lamp" />
+            android:background="@drawable/floor_lamp"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/laptop"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/laptop" />
+            android:background="@drawable/laptop"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/door"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/door" />
+            android:background="@drawable/door"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/window"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="5dp"
-            android:background="@drawable/window_closed_variant" />
+            android:background="@drawable/window_closed_variant"
+            android:clickable="true"
+            android:focusable="true" />
+
         <ImageButton
             android:id="@+id/arrow_forward"
             android:layout_width="25dp"

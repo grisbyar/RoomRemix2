@@ -15,7 +15,6 @@ import com.example.roomremix2.MainActivity.Companion.path
 class DrawView : View {
 
     var params : ViewGroup.LayoutParams? = null
-
     companion object{
         var pathList = ArrayList<Path>() // stores all paths drawn on screen
         var colorList = ArrayList<Int>()
@@ -40,15 +39,12 @@ class DrawView : View {
         drawTool.style = Paint.Style.STROKE
         drawTool.strokeJoin = Paint.Join.ROUND
         drawTool.strokeWidth = 8f
-
         params = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         /*register draw movement on screen*/
-
-
         var xCord = event.x
         var yCord = event.y
 
@@ -79,4 +75,5 @@ class DrawView : View {
         }
 
     }
+
 }
