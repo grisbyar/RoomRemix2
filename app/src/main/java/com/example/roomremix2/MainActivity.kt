@@ -38,15 +38,19 @@ class MainActivity : AppCompatActivity() {
         }
         eraserButton.setOnClickListener {
             //Toast.makeText(this,"Clicked erase", Toast.LENGTH_SHORT).show()
+            //***
             drawTool.color = Color.WHITE
             currentColorPicker(drawTool.color)
         }
         deleteButton.setOnClickListener {
             //Toast.makeText(this,"Clicked delete", Toast.LENGTH_SHORT).show()
+            //***
             pathList.clear()
             colorList.clear()
             path.reset()
         }
+
+        //decorating part
 
     }
 
