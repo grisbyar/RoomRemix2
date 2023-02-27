@@ -34,56 +34,54 @@ class MainActivity : AppCompatActivity() {
     var x_cord = 0
     var y_cord = 0
   override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        supportActionBar?.hide()
+      super.onCreate(savedInstanceState)
+      setContentView(R.layout.activity_main)
+      supportActionBar?.hide()
 
-        val drawButton = findViewById<ImageButton>(R.id.draw);
-        val eraserButton = findViewById<ImageButton>(R.id.eraser);
-        val deleteButton = findViewById<ImageButton>(R.id.delete)
+      val drawButton = findViewById<ImageButton>(R.id.draw);
+      val eraserButton = findViewById<ImageButton>(R.id.eraser);
+      val deleteButton = findViewById<ImageButton>(R.id.delete)
 
-        drawButton.setOnClickListener {
-            //Toast.makeText(this,"Clicked draw", Toast.LENGTH_SHORT).show()
-            drawTool.color = Color.BLACK
-            currentColorPicker(drawTool.color)
-        }
-        eraserButton.setOnClickListener {
-            Toast.makeText(this,"Clicked erase", Toast.LENGTH_SHORT).show()
-            //***
-            drawTool.color = Color.WHITE
-            currentColorPicker(drawTool.color)
-        }
-        deleteButton.setOnClickListener {
-            Toast.makeText(this,"Clicked delete", Toast.LENGTH_SHORT).show()
-            //***
-            pathList.clear()
-            colorList.clear()
-            path.reset()
-        }
+      drawButton.setOnClickListener {
+          //Toast.makeText(this,"Clicked draw", Toast.LENGTH_SHORT).show()
+          drawTool.color = Color.BLACK
+          currentColorPicker(drawTool.color)
+      }
+      eraserButton.setOnClickListener {
+          Toast.makeText(this, "Clicked erase", Toast.LENGTH_SHORT).show()
+          //***
+          drawTool.color = Color.WHITE
+          currentColorPicker(drawTool.color)
+      }
+      deleteButton.setOnClickListener {
+          Toast.makeText(this, "Clicked delete", Toast.LENGTH_SHORT).show()
+          //***
+          pathList.clear()
+          colorList.clear()
+          path.reset()
+      }
 
-        //decorating part
+      //decorating part
 //val couchStamp = findViewById<ImageButton>(R.id.couch).drawable
-        val couchStamp = findViewById<ImageButton>(R.id.couch)
-        val tableStamp = findViewById<ImageButton>(R.id.table)
-        val bedStamp = findViewById<ImageButton>(R.id.bed)
-        val chairStamp = findViewById<ImageButton>(R.id.chair)
-        val dresserStamp = findViewById<ImageButton>(R.id.dresser)
-        val televisionStamp = findViewById<ImageButton>(R.id.television)
-        val floorLampStamp = findViewById<ImageButton>(R.id.lamp)
-        val laptopStamp = findViewById<ImageButton>(R.id.laptop)
-        val doorStamp = findViewById<ImageButton>(R.id.door)
-        val windowStamp = findViewById<ImageButton>(R.id.window)
+      val couchStamp = findViewById<ImageButton>(R.id.couch)
+      val tableStamp = findViewById<ImageButton>(R.id.table)
+      val bedStamp = findViewById<ImageButton>(R.id.bed)
+      val chairStamp = findViewById<ImageButton>(R.id.chair)
+      val dresserStamp = findViewById<ImageButton>(R.id.dresser)
+      val televisionStamp = findViewById<ImageButton>(R.id.television)
+      val floorLampStamp = findViewById<ImageButton>(R.id.lamp)
+      val laptopStamp = findViewById<ImageButton>(R.id.laptop)
+      val doorStamp = findViewById<ImageButton>(R.id.door)
+      val windowStamp = findViewById<ImageButton>(R.id.window)
 
 
-        ///////////
+      ///////////
 
 
-        //////////////
+      //////////////
 
 
-    }
-
-
+  }
 }
 
 
@@ -91,6 +89,7 @@ private fun currentColorPicker(color: Int) {
     currentColor = color
     path = Path()
 }
+
 
 
 //ability to copy and drag
