@@ -16,8 +16,6 @@ import android.widget.Toast
 import com.example.roomremix2.MainActivity
 import com.example.roomremix2.databinding.ActivityLoginBinding
 
-import com.example.roomremix2.R
-
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
