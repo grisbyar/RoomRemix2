@@ -1,6 +1,7 @@
 package com.example.roomremix2.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import com.example.roomremix2.MainActivity
 import com.example.roomremix2.databinding.ActivityLoginBinding
 
 import com.example.roomremix2.R
@@ -94,6 +96,8 @@ private lateinit var binding: ActivityLoginBinding
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
+                val intent = Intent(context, MainActivity::class.java)
+                startActivity(intent)
             }
         }
     }
