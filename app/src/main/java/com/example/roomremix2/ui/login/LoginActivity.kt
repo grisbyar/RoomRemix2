@@ -103,8 +103,8 @@ private lateinit var binding: ActivityLoginBinding
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
-        val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
+        val welcome = "Welcome"
+        val displayName = model.displayName + "!"
         // TODO : initiate successful logged in experience
         Toast.makeText(
             applicationContext,
