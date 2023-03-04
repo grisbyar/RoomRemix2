@@ -9,6 +9,9 @@ import com.example.roomremix2.data.Result
 
 import com.example.roomremix2.R
 
+/**
+ * Handles user interaction on the login screen
+ */
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()

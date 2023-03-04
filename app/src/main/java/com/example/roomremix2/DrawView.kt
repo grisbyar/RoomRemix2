@@ -15,11 +15,6 @@ import com.example.roomremix2.MainActivity.Companion.path
 class DrawView : View {
 
     var params : ViewGroup.LayoutParams? = null
-    companion object{
-        var pathList = ArrayList<Path>() // stores all paths drawn on screen
-        var colorList = ArrayList<Int>()
-        var currentColor = Color.BLACK
-    }
     //import constructor view
     constructor(context: Context) : this(context, null){
         init()
@@ -69,11 +64,17 @@ class DrawView : View {
     override fun onDraw(canvas: Canvas) {
 
         for(i in pathList.indices){
-            drawTool.setColor(colorList[i])
+            drawTool.color = colorList[i]
             canvas.drawPath(pathList[i],drawTool)
             invalidate()
         }
 
+    }
+
+    companion object{
+        var pathList = ArrayList<Path>() // stores all paths drawn on screen
+        var colorList = ArrayList<Int>()
+        var currentColor = Color.BLACK
     }
 
 }
