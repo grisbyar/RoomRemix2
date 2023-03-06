@@ -74,18 +74,8 @@ class MainActivity : AppCompatActivity() {
         val doorStamp = findViewById<ImageButton>(R.id.door)
         val windowStamp = findViewById<ImageButton>(R.id.window)
 
-
-        ///////////
-
-
-        //////////////
-
-
     }
-
-
 }
-
 
 private fun currentColorPicker(color: Int) {
     currentColor = color
