@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         //decorating part
-//val couchStamp = findViewById<ImageButton>(R.id.couch).drawable
         val couchStamp = findViewById<ImageButton>(R.id.couch)
         val tableStamp = findViewById<ImageButton>(R.id.table)
         val bedStamp = findViewById<ImageButton>(R.id.bed)
@@ -81,7 +80,3 @@ private fun currentColorPicker(color: Int) {
     currentColor = color
     path = Path()
 }
-
-
-//ability to copy and drag
-
