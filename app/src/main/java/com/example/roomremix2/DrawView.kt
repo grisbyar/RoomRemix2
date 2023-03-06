@@ -22,16 +22,16 @@ class DrawView : View {
     }
     //import constructor view
     constructor(context: Context) : this(context, null){
-        init()
+        screenSmooth()
     }
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0){
-        init()
+        screenSmooth()
     }
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init()
+        screenSmooth()
     }
-    private fun init(){
+    private fun screenSmooth(){
         /* initialize function
         makes texture smooth for drawing */
         drawTool.isAntiAlias = true

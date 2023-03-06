@@ -115,7 +115,6 @@ private lateinit var binding: ActivityLoginBinding
         Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
     }
 }
-
 /**
  * Extension function to simplify setting an afterTextChanged action to EditText components.
  */
