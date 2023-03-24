@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AccountActivity">
+
+    <LinearLayout
+        android:background="@color/purple_500"
+        android:layout_width="393dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="760dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/decorator"
+            android:background="@color/purple_500"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/decorate"
+            android:drawableTint="@color/white"
+            android:text="Decorator"
+            android:textSize="7dp"
+            android:clickable="true"/>
+
+        <Button
+            android:background="@color/purple_500"
+
+            android:id="@+id/shopping"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/shopping"
+            android:drawableTint="@color/white"
+            android:text="Shopping"
+            android:textSize="7dp"
+            android:clickable="true"/>
+
+        <Button
+            android:id="@+id/ideas"
+            android:background="@color/purple_500"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ideas"
+            android:drawableTint="@color/white"
+            android:text="Ideas"
+            android:textSize="7dp"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/palette"
+            android:background="@color/purple_500"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/palette"
+            android:drawableTint="@color/white"
+            android:text="Palette"
+            android:textSize="7dp"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/account"
+            android:layout_width="65dp"
+            android:background="@color/purple_500"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/account"
+            android:drawableTint="@color/white"
+            android:text="Account"
+            android:textSize="7dp"
+            android:clickable="true" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</androidx.constraintlayout.widget.ConstraintLayout>

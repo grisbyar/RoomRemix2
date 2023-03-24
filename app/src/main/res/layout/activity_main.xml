@@ -22,28 +22,32 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/draw" />
+            android:background="@drawable/draw"
+            android:clickable="true" />
 
         <ImageButton
             android:id="@+id/eraser"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/eraser" />
+            android:background="@drawable/eraser"
+            android:clickable="true"/>
 
         <ImageButton
             android:id="@+id/delete"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/delete" />
+            android:background="@drawable/delete"
+            android:clickable="true"/>
 
         <ImageButton
             android:id="@+id/more_options"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="@drawable/more_options" />
+            android:background="@drawable/more_options"
+            android:clickable="true" />
 
     </LinearLayout>
 

@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.DragEvent
 import android.view.View.*
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.Toast
@@ -33,17 +34,18 @@ class MainActivity : AppCompatActivity() {
     private var layoutParams: RelativeLayout.LayoutParams? = null
     var x_cord = 0
     var y_cord = 0
+
   override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView(R.layout.activity_main)
-      supportActionBar?.hide()
 
-      val drawButton = findViewById<ImageButton>(R.id.draw);
-      val eraserButton = findViewById<ImageButton>(R.id.eraser);
+      val drawButton = findViewById<ImageButton>(R.id.draw)
+      val eraserButton = findViewById<ImageButton>(R.id.eraser)
       val deleteButton = findViewById<ImageButton>(R.id.delete)
+      val moreOptionsButton = findViewById<ImageButton>(R.id.more_options)
 
       drawButton.setOnClickListener {
-          //Toast.makeText(this,"Clicked draw", Toast.LENGTH_SHORT).show()
+          Toast.makeText(this,"Clicked draw", Toast.LENGTH_SHORT).show()
           drawTool.color = Color.BLACK
           currentColorPicker(drawTool.color)
       }
@@ -60,9 +62,12 @@ class MainActivity : AppCompatActivity() {
           colorList.clear()
           path.reset()
       }
+      moreOptionsButton.setOnClickListener {
+          Toast.makeText(this, "Clicked more options", Toast.LENGTH_SHORT).show()
+      }
 
       //decorating part
-//val couchStamp = findViewById<ImageButton>(R.id.couch).drawable
+      // val couchStamp = findViewById<ImageButton>(R.id.couch).drawable
       val couchStamp = findViewById<ImageButton>(R.id.couch)
       val tableStamp = findViewById<ImageButton>(R.id.table)
       val bedStamp = findViewById<ImageButton>(R.id.bed)
@@ -73,14 +78,6 @@ class MainActivity : AppCompatActivity() {
       val laptopStamp = findViewById<ImageButton>(R.id.laptop)
       val doorStamp = findViewById<ImageButton>(R.id.door)
       val windowStamp = findViewById<ImageButton>(R.id.window)
-
-
-      ///////////
-
-
-      //////////////
-
-
   }
 }
 
