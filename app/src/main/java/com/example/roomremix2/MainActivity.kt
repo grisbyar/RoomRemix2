@@ -2,6 +2,7 @@ package com.example.roomremix2
 
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
@@ -21,7 +22,6 @@ import com.example.roomremix2.MainActivity.Companion.path
 
 
 class MainActivity : AppCompatActivity() {
-
     companion object {
         //import tools to draw
         //equivalent of public static
@@ -38,6 +38,37 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView(R.layout.activity_main)
+
+      val decoratorButton = findViewById<Button>(R.id.decorator);
+      val shoppingButton = findViewById<Button>(R.id.shopping);
+      val ideasButton = findViewById<Button>(R.id.ideas);
+      val paletteButton = findViewById<Button>(R.id.palette);
+      val accountButton = findViewById<Button>(R.id.account);
+
+      decoratorButton.setOnClickListener {
+          val intent = Intent(this, MainActivity::class.java)
+          startActivity(intent)
+      }
+
+      shoppingButton.setOnClickListener {
+          val intent = Intent(this, ShoppingActivity::class.java)
+          startActivity(intent)
+      }
+
+      ideasButton.setOnClickListener {
+          val intent = Intent(this, IdeaActivity::class.java)
+          startActivity(intent)
+      }
+
+      paletteButton.setOnClickListener {
+          val intent = Intent(this, PaletteActivity::class.java)
+          startActivity(intent)
+      }
+
+      accountButton.setOnClickListener {
+          val intent = Intent(this, AccountActivity::class.java)
+          startActivity(intent)
+      }
 
       val drawButton = findViewById<ImageButton>(R.id.draw)
       val eraserButton = findViewById<ImageButton>(R.id.eraser)
@@ -80,7 +111,6 @@ class MainActivity : AppCompatActivity() {
       val windowStamp = findViewById<ImageButton>(R.id.window)
   }
 }
-
 
 private fun currentColorPicker(color: Int) {
     currentColor = color

@@ -7,54 +7,9 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designbar">
-
-
-        <ImageButton
-            android:id="@+id/draw"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/draw"
-            android:clickable="true" />
-
-        <ImageButton
-            android:id="@+id/eraser"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/eraser"
-            android:clickable="true"/>
-
-        <ImageButton
-            android:id="@+id/delete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/delete"
-            android:clickable="true"/>
-
-        <ImageButton
-            android:id="@+id/more_options"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/more_options"
-            android:clickable="true" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/design_bar"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="612dp"
         android:background="@drawable/borderoutline"
         android:orientation="horizontal"
@@ -160,6 +115,117 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/navigation_bar">
+
+        <ImageButton
+            android:id="@+id/draw"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/draw"
+            android:clickable="true" />
+
+        <ImageButton
+            android:id="@+id/eraser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/eraser"
+            android:clickable="true" />
+
+        <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/delete"
+            android:clickable="true" />
+
+        <ImageButton
+            android:id="@+id/more_options"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/more_options"
+            android:clickable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/decorator"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:drawableTop="@drawable/decorate"
+            android:drawableTint="@color/white"
+            android:text="Decorator"
+            android:textSize="7dp" />
+
+        <Button
+            android:id="@+id/shopping"
+
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:drawableTop="@drawable/shopping"
+            android:drawableTint="@color/white"
+            android:text="Shopping"
+            android:textSize="7dp" />
+
+        <Button
+            android:id="@+id/ideas"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:drawableTop="@drawable/ideas"
+            android:drawableTint="@color/white"
+            android:text="Ideas"
+            android:textSize="7dp" />
+
+        <Button
+            android:id="@+id/palette"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:drawableTop="@drawable/palette"
+            android:drawableTint="@color/white"
+            android:text="Palette"
+            android:textSize="7dp" />
+
+        <Button
+            android:id="@+id/account"
+            android:layout_width="65dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:drawableTop="@drawable/account"
+            android:drawableTint="@color/white"
+            android:text="Account"
+            android:textSize="7dp" />
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
@@ -171,7 +237,5 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <include layout="@layout/draw_view" />
-
-
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
