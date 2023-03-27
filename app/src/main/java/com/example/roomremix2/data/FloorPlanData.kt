@@ -35,3 +35,4 @@ class FloorPlanData {
             Toast.makeText(this, "Error saving floorplan", Toast.LENGTH_SHORT).show()
         }
     }
+}
