@@ -12,6 +12,7 @@ class FurnitureWishListData {
     data class WishlistItem(
         val title: String,
         val link: String,
-        val imageLink: String
+        val imageLink: String,
+        val floorplan: String,
     )
 }
