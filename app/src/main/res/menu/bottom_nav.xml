@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/design"
+        android:title="Decorator" />
+    <item
+        android:icon="@drawable/shoppingcart"
+        android:title="Shopping" />
+    <item
+        android:icon="@drawable/cloud"
+        android:title="Ideas" />
+    <item
+        android:icon="@drawable/palette"
+        android:title="Pallete" />
+    <item
+        android:icon="@drawable/accountcircle"
+        android:title="Account" />
+</menu>
