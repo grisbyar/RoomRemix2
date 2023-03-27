@@ -148,3 +148,6 @@ private fun copyDragDrop(sourceView: View, parentLayout: ViewGroup) {
     }
 }
 
+fun saveFloorplan(){
+    //Implement Later
+}
