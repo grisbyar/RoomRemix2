@@ -155,8 +155,4 @@ private fun copyDragDrop(sourceView: View, sourceDrawable: Drawable, parentLayou
     }
 }
 
-fun saveFloorplan(){
-    //Implement Later
-}
-
 
