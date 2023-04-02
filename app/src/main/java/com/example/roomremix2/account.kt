@@ -16,6 +16,4 @@ class account : AppCompatActivity() {
 
         binding.
     }
-
-
 }
