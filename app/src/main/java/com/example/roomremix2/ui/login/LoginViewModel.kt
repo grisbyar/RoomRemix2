@@ -19,6 +19,10 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     fun login(username: String, password: String) {
         // can be launched in a separate asynchronous job
+        fun isValidEmail(email: String): Boolean {
+            val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
+            return email.matches(emailRegex)
+        }
         val result = loginRepository.login(username, password)
 
         if (result is Result.Success) {
