@@ -9,9 +9,22 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class JsonUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun `Given a exercise name contained within the json then I should recieve a list of muscles that are worked out by thte exercise`() {
+        givenJsonFileIsValid()
+        whenExerciseDataIsReadAndParsed()
+        thenExerciseCollectionShouldNotBeEmpty()
+    } private fun thenExerciseCollectionShouldNotBeEmpty() {
+        TODO("Not yet implemented")
     }
+
+    private fun whenExerciseDataIsReadAndParsed() {
+        TODO("Not yet implemented")
+    }
+
+    private fun givenJsonFileIsValid() {
+        TODO("Not yet implemented")
+    }
+
 }

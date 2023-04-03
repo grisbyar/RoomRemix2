@@ -46,6 +46,10 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
             username.isNotBlank()
         }
     }
+    fun isValidEmail(email: String): Boolean {
+        val emailRegex = Regex("^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+\$")
+        return email.matches(emailRegex)
+    }
 
     // A placeholder password validation check
     private fun isPasswordValid(password: String): Boolean {
