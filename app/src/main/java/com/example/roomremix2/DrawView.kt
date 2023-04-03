@@ -34,11 +34,17 @@ class DrawView : View {
     private fun init(){
         /* initialize function
         makes texture smooth for drawing */
-        drawTool.isAntiAlias = true
-        drawTool.color = currentColor
-        drawTool.style = Paint.Style.STROKE
-        drawTool.strokeJoin = Paint.Join.ROUND
-        drawTool.strokeWidth = 8f
+
+        /*
+            chained the setters so that it dosnt just say "drawtool." over and over again.
+         */
+        drawTool.apply {
+            isAntiAlias = true
+            color = currentColor
+            style = Paint.Style.STROKE
+            strokeJoin = Paint.Join.ROUND
+            strokeWidth = 8f
+        }
         params = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
     }
