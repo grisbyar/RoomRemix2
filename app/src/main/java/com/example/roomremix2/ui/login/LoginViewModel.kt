@@ -9,46 +9,47 @@ import com.example.roomremix2.data.Result
 
 import com.example.roomremix2.R
 
+sealed class LoginViewState {
+    object Loading : LoginViewState()
+    data class Error(val message: Int) : LoginViewState()
+    data class Success(val displayName: String) : LoginViewState()
+}
+
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
-    private val _loginResult = MutableLiveData<LoginResult>()
-    val loginResult: LiveData<LoginResult> = _loginResult
+    private val _loginResult = MutableLiveData<LoginViewState>()
+    val loginResult: LiveData<LoginViewState> = _loginResult
 
     fun login(username: String, password: String) {
         // can be launched in a separate asynchronous job
         val result = loginRepository.login(username, password)
 
         if (result is Result.Success) {
-            _loginResult.value = LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
+            _loginResult.value = LoginViewState.Success(result.data.displayName)
         } else {
-            _loginResult.value = LoginResult(error = R.string.login_failed)
+            _loginResult.value = LoginViewState.Error(R.string.login_failed)
         }
     }
 
     fun loginDataChanged(username: String, password: String) {
-        if (!isUserNameValid(username)) {
-            _loginForm.value = LoginFormState(usernameError = R.string.invalid_username)
-        } else if (!isPasswordValid(password)) {
-            _loginForm.value = LoginFormState(passwordError = R.string.invalid_password)
-        } else {
-            _loginForm.value = LoginFormState(isDataValid = true)
+        val isValidEmail = username.isValidEmail()
+        val isPasswordValid = password.length > 5
+
+        _loginForm.value = when {
+            !isValidEmail -> LoginFormState(usernameError = R.string.invalid_username)
+            !isPasswordValid -> LoginFormState(passwordError = R.string.invalid_password)
+            else -> LoginFormState(isDataValid = true)
         }
     }
 
-    // A placeholder username validation check
-    private fun isUserNameValid(username: String): Boolean {
-        return if (username.contains('@')) {
-            Patterns.EMAIL_ADDRESS.matcher(username).matches()
+    private fun String.isValidEmail(): Boolean {
+        return if (this.contains('@')) {
+            Patterns.EMAIL_ADDRESS.matcher(this).matches()
         } else {
-            username.isNotBlank()
+            this.isNotBlank()
         }
-    }
-
-    // A placeholder password validation check
-    private fun isPasswordValid(password: String): Boolean {
-        return password.length > 5
     }
 }
