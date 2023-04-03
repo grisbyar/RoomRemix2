@@ -26,6 +26,7 @@ import com.example.roomremix2.MainActivity.Companion.path
 
 class MainActivity : AppCompatActivity() {
 
+
     companion object {
         //import tools to draw
         //equivalent of public static
