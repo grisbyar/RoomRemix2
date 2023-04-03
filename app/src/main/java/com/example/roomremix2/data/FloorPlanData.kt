@@ -3,7 +3,11 @@ import android.widget.Toast
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileOutputStream
-
+/**
+@property id; id of floorplan
+@property x; input x for room size.
+@property y; input y for room size.
+*/
 class FloorPlanData {
 
     data class FloorPlanItem(
@@ -19,14 +23,14 @@ class FloorPlanData {
         val items: List<FloorPlanItem>
     )
 
-    private fun saveFloorplanFile(floorPlan: FloorPlan, fileName: String) {
+    public fun saveFloorplanFile(floorPlan: FloorPlan, fileName: String) {
         //gson serializes JSON
         val gson = Gson()
         val json = gson.toJson(floorPlan)
 
         try {
             val file = File(filesDir, fileName)
-            val floorplanfile = FileOutputStream(file).use { outputStream ->
+            FileOutputStream(file).use { outputStream ->
                 outputStream.write(json.toByteArray())
             }
             Toast.makeText(this, "Floorplan saved", Toast.LENGTH_SHORT).show()
@@ -35,4 +39,8 @@ class FloorPlanData {
             Toast.makeText(this, "Error saving floorplan", Toast.LENGTH_SHORT).show()
         }
     }
+
+    val pathList: List<Path> get() = floorPlan.pathList
+    val colorList: List<Int> get() = floorPlan.colorList
+    val items: List<FloorPlanItem> get() = floorPlan.items
 }
