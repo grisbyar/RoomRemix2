@@ -3,7 +3,11 @@ import android.widget.Toast
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileOutputStream
-
+/**
+@property id; id of floorplan
+@property x; input x for room size.
+@property y; input y for room size.
+*/
 class FloorPlanData {
 
     data class FloorPlanItem(
