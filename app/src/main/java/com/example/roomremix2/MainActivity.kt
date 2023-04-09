@@ -164,7 +164,8 @@ private fun captureScreen(): Bitmap {
 }
 
 private fun saveFloorplan(bitmap: Bitmap) {
-    val fileName = "floorplan.png"
+    val floorplanNumber = getNextFloorplanNumber()
+    val fileName = "floorplan_$floorplanNumber.png"
     val outputStream: FileOutputStream
 
     try {
@@ -179,6 +180,11 @@ private fun saveFloorplan(bitmap: Bitmap) {
         Toast.makeText(this, "Error saving the floorplan", Toast.LENGTH_SHORT).show()
     }
 }
+private fun getNextFloorplanNumber(): Int {
+    val sharedPreferences = getSharedPreferences("FloorplanCounter", Context.MODE_PRIVATE)
+    val floorplanNumber = sharedPreferences.getInt("counter", 1)
+    sharedPreferences.edit().putInt("counter", floorplanNumber + 1).apply()
+    return floorplanNumber
 }
 
 
