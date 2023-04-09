@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        val drawButton = findViewById<ImageButton>(R.id.draw);
-        val eraserButton = findViewById<ImageButton>(R.id.eraser);
+        val drawButton = findViewById<ImageButton>(R.id.draw)
+        val eraserButton = findViewById<ImageButton>(R.id.eraser)
         val deleteButton = findViewById<ImageButton>(R.id.delete)
 
         drawButton.setOnClickListener {
@@ -155,8 +155,30 @@ private fun copyDragDrop(sourceView: View, sourceDrawable: Drawable, parentLayou
     }
 }
 
-fun saveFloorplan(){
-    //Implement Later
+private fun captureScreen(): Bitmap {
+    val rootView = window.decorView.rootView
+    val bitmap = Bitmap.createBitmap(rootView.width, rootView.height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    rootView.draw(canvas)
+    return bitmap
+}
+
+private fun saveFloorplan(bitmap: Bitmap) {
+    val fileName = "floorplan.png"
+    val outputStream: FileOutputStream
+
+    try {
+        outputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        outputStream.close()
+
+        val filePath = File(filesDir, fileName).absolutePath
+        Toast.makeText(this, "Saved to $filePath", Toast.LENGTH_SHORT).show()
+    } catch (e: Exception) {
+        e.printStackTrace()
+        Toast.makeText(this, "Error saving the floorplan", Toast.LENGTH_SHORT).show()
+    }
+}
 }
 
 
