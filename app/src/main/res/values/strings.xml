@@ -52,10 +52,6 @@
         <string name="settings_theme_selected">Theme selected</string>
         <string name="settings_theme">Theme</string>
         <string name="about_app_version">Version 1.0.0</string>
-        <string name="about_app_copyright" translatable="false">© 2020 Anibal Ventura</string>
-        <string name="about_changelog_title">Changelog</string>
-        <string name="about_changelog_v100_title" translatable="false">v 1.0.0</string>
-        <string name="about_changelog_v100_content">- First release.</string>
         <string name="dialog_exit">Exit without save?</string>
         <string name="dialog_exit_confirmation">Exit</string>
         <string name="dialog_exit_message">If you exit the app now, your floorplan won\'t be saved.</string>
