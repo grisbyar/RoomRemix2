@@ -1,10 +1,15 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+//plugins {
+//    id 'com.android.application'
+//    id 'org.jetbrains.kotlin.android'
+//    id 'kotlin-android-extensions'
+//}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    namespace 'com.example.roomremix2'
+    //namespace 'com.example.roomremix2'
     compileSdk 33
 
     defaultConfig {
@@ -36,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
     implementation 'com.google.code.gson:gson:2.8.9'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -60,12 +67,13 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
     implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:color:3.3.0'
+
+//    classpath "com.android.tools.build:gradle:4.1.0"
+//    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // Material Dialogs
-//    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
-//    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
 }
