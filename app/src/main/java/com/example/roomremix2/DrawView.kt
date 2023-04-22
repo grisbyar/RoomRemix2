@@ -32,8 +32,7 @@ class DrawView : View {
         init()
     }
     private fun init(){
-        /* initialize function
-        makes texture smooth for drawing */
+        // smooth texture
         drawTool.isAntiAlias = true
         drawTool.color = currentColor
         drawTool.style = Paint.Style.STROKE
@@ -44,7 +43,7 @@ class DrawView : View {
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        /*register draw movement on screen*/
+        //register draw movement on screen
         var xCord = event.x
         var yCord = event.y
 

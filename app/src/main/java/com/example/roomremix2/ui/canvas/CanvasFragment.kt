@@ -316,8 +316,7 @@ class CanvasFragment : Fragment() {
         }
     }
 
-    /* ===================================== Permissions ===================================== */
-
+//read write access
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when {
@@ -349,8 +348,7 @@ class CanvasFragment : Fragment() {
         )
     }
 
-    /* ===================================== Options Menu ===================================== */
-
+//Options
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_canvas, menu)
     }
@@ -372,8 +370,7 @@ class CanvasFragment : Fragment() {
 
 
 
-    /* ===================================== Tools Panel ===================================== */
-
+    //tools
     fun brush() {
         binding.dragReact.visibility = GONE
         binding.drawingView.setBrushColor(brushColor)
@@ -481,8 +478,6 @@ class CanvasFragment : Fragment() {
         }
     }
 
-    /* ===================================== Tools Panel Utils ===================================== */
-
     private fun showBrushSizeDialog(eraser: Boolean) {
         val sizes = listOf(
             BasicGridItem(R.drawable.brush_small, getString(R.string.brush_small)),
@@ -525,8 +520,7 @@ class CanvasFragment : Fragment() {
         }
     }
 
-    /* ===================================== On app exit. ===================================== */
-
+    //onExit
     private fun onBackPressed() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
             object : OnBackPressedCallback(true) {

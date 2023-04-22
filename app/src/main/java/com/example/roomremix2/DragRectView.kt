@@ -42,18 +42,10 @@ class DragRectView : View {
         init()
     }
 
-    /**
-     * Sets callback for up
-     *
-     * @param callback [OnUpCallback]
-     */
     fun setOnUpCallback(callback: OnUpCallback?) {
         mCallback = callback
     }
 
-    /**
-     * Inits internal data
-     */
     private fun init() {
         mRectPaint = Paint()
         mRectPaint!!.color = context.resources.getColor(R.color.holo_green_light)

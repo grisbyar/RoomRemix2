@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         }
         eraserButton.setOnClickListener {
             Toast.makeText(this, "Clicked erase", Toast.LENGTH_SHORT).show()
-            //***
             Log.d("Test", "clicked erase")
             drawTool.color = Color.WHITE
             currentColorPicker(drawTool.color)
@@ -65,96 +64,52 @@ class MainActivity : AppCompatActivity() {
 
         //decorating part
         //val couchStamp = findViewById<ImageButton>(R.id.couch).drawable
-        val couchStamp = findViewById<ImageButton>(R.id.couch)
-        val couchStampDrawable = couchStamp.drawable
-        val tableStamp = findViewById<ImageButton>(R.id.table)
-        val tableStampDrawable = tableStamp.drawable
-        val bedStamp = findViewById<ImageButton>(R.id.bed)
-        val bedStampDrawable = bedStamp.drawable
-        val chairStamp = findViewById<ImageButton>(R.id.chair)
-        val chairStampDrawable = chairStamp.drawable
-        val dresserStamp = findViewById<ImageButton>(R.id.dresser)
-        val dresserStampDrawable = dresserStamp.drawable
-        val televisionStamp = findViewById<ImageButton>(R.id.television)
-        val televisionStampDrawable = televisionStamp.drawable
-        val floorLampStamp = findViewById<ImageButton>(R.id.lamp)
-        val floorLampDrawable = floorLampStamp.drawable
-        val laptopStamp = findViewById<ImageButton>(R.id.laptop)
-        val laptopStampDrawable = laptopStamp.drawable
-        val doorStamp = findViewById<ImageButton>(R.id.door)
-        val doorStampDrawable = doorStamp.drawable
-        val windowStamp = findViewById<ImageButton>(R.id.window)
-        val windowStampDrawable = windowStamp.drawable
-
-        val layout = findViewById<RelativeLayout>(R.id.relativeLayout)
-
-        copyDragDrop(couchStamp, couchStampDrawable, layout)
-        copyDragDrop(tableStamp, tableStampDrawable, layout)
-        copyDragDrop(bedStamp, bedStampDrawable, layout)
-        copyDragDrop(chairStamp, chairStampDrawable, layout)
-        copyDragDrop(dresserStamp, dresserStampDrawable, layout)
-        copyDragDrop(televisionStamp, televisionStampDrawable, layout)
-        copyDragDrop(floorLampStamp, floorLampDrawable, layout)
-        copyDragDrop(laptopStamp, laptopStampDrawable, layout)
-        copyDragDrop(doorStamp, doorStampDrawable, layout)
-        copyDragDrop(windowStamp, windowStampDrawable, layout)
+//        val couchStamp = findViewById<ImageButton>(R.id.couch)
+//        val couchStampDrawable = couchStamp.drawable
+//        val tableStamp = findViewById<ImageButton>(R.id.table)
+//        val tableStampDrawable = tableStamp.drawable
+//        val bedStamp = findViewById<ImageButton>(R.id.bed)
+//        val bedStampDrawable = bedStamp.drawable
+//        val chairStamp = findViewById<ImageButton>(R.id.chair)
+//        val chairStampDrawable = chairStamp.drawable
+//        val dresserStamp = findViewById<ImageButton>(R.id.dresser)
+//        val dresserStampDrawable = dresserStamp.drawable
+//        val televisionStamp = findViewById<ImageButton>(R.id.television)
+//        val televisionStampDrawable = televisionStamp.drawable
+//        val floorLampStamp = findViewById<ImageButton>(R.id.lamp)
+//        val floorLampDrawable = floorLampStamp.drawable
+//        val laptopStamp = findViewById<ImageButton>(R.id.laptop)
+//        val laptopStampDrawable = laptopStamp.drawable
+//        val doorStamp = findViewById<ImageButton>(R.id.door)
+//        val doorStampDrawable = doorStamp.drawable
+//        val windowStamp = findViewById<ImageButton>(R.id.window)
+//        val windowStampDrawable = windowStamp.drawable
+//
+//        val layout = findViewById<RelativeLayout>(R.id.relativeLayout)
+//
+//        copyDragDrop(couchStamp, couchStampDrawable, layout)
+//        copyDragDrop(tableStamp, tableStampDrawable, layout)
+//        copyDragDrop(bedStamp, bedStampDrawable, layout)
+//        copyDragDrop(chairStamp, chairStampDrawable, layout)
+//        copyDragDrop(dresserStamp, dresserStampDrawable, layout)
+//        copyDragDrop(televisionStamp, televisionStampDrawable, layout)
+//        copyDragDrop(floorLampStamp, floorLampDrawable, layout)
+//        copyDragDrop(laptopStamp, laptopStampDrawable, layout)
+//        copyDragDrop(doorStamp, doorStampDrawable, layout)
+//        copyDragDrop(windowStamp, windowStampDrawable, layout)
 
 
     }
 
 }
-private fun currentColorPicker(color: Int) {
-    currentColor = color
-    path = Path()
-}
-
-//ability to copy and drag
-private fun copyDragDrop(sourceView: View, sourceDrawable: Drawable, parentLayout: ViewGroup) {
-    sourceView.setOnTouchListener { v, event ->
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                val newStamp = ImageButton(this@MainActivity).apply {
-                    layoutParams = v.layoutParams
-                    setImageDrawable((v as ImageButton).drawable)
-                }
-                copyDragDrop(newStamp, sourceDrawable, parentLayout)
-                val data = ClipData.newPlainText("", "")
-                val shadowBuilder = View.DragShadowBuilder(newStamp)
-                v.startDragAndDrop(data, shadowBuilder, newStamp, 0)
-                parentLayout.addView(newStamp)
-                true
-            }
-            else -> false
-        }
-    }
-
-    parentLayout.setOnDragListener { v, event ->
-        when (event.action) {
-            DragEvent.ACTION_DRAG_STARTED -> {
-                true
-            }
-            DragEvent.ACTION_DRAG_ENTERED -> {
-                true
-            }
-            DragEvent.ACTION_DRAG_EXITED -> {
-                true
-            }
-            DragEvent.ACTION_DROP -> {
-                val view = event.localState as View
-                view.x = event.x - view.width / 2
-                view.y = event.y - view.height / 2
-                true
-            }
-            DragEvent.ACTION_DRAG_ENDED -> {
-                true
-            }
-            else -> false
-        }
-    }
-}
-
-fun saveFloorplan(){
-    //Implement Later
-}
-
+//private fun currentColorPicker(color: Int) {
+//    currentColor = color
+//    path = Path()
+//}
+//
+//
+//fun saveFloorplan(){
+//    //Implement Later
+//}
+//
 
