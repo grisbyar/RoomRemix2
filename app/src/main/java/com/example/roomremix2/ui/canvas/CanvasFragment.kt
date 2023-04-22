@@ -70,8 +70,8 @@ class CanvasFragment : Fragment() {
 
         binding.llIcons.setOnDragListener(dragListener)
         binding.drawingView.setOnDragListener(dragListener)
-        binding.ibHome.setOnLongClickListener {
-            val clipText = "Home"
+        binding.ibed.setOnLongClickListener {
+            val clipText = "Bed"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -80,8 +80,8 @@ class CanvasFragment : Fragment() {
             it.startDragAndDrop(data, dragShadowBuilder, it, 0)
             true
         }
-        binding.ibSnow.setOnLongClickListener {
-            val clipText = "Snow"
+        binding.ichair.setOnLongClickListener {
+            val clipText = "Chair"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -90,8 +90,8 @@ class CanvasFragment : Fragment() {
             it.startDragAndDrop(data, dragShadowBuilder, it, 0)
             true
         }
-        binding.ibWater.setOnLongClickListener {
-            val clipText = "Water"
+        binding.icouch.setOnLongClickListener {
+            val clipText = "Couch"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -100,8 +100,8 @@ class CanvasFragment : Fragment() {
             it.startDragAndDrop(data, dragShadowBuilder, it, 0)
             true
         }
-        binding.ibPhone.setOnLongClickListener {
-            val clipText = "Phone"
+        binding.idesk.setOnLongClickListener {
+            val clipText = "Desk"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -110,19 +110,8 @@ class CanvasFragment : Fragment() {
             it.startDragAndDrop(data, dragShadowBuilder, it, 0)
             true
         }
-        binding.ibVolume.setOnLongClickListener {
-            val clipText = "Volume"
-            val item = ClipData.Item(clipText)
-            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
-            val data = ClipData(clipText, mimeTypes, item)
-
-            val dragShadowBuilder = View.DragShadowBuilder(it)
-            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
-            true
-        }
-
-        binding.ibSound.setOnLongClickListener {
-            val clipText = "Sound"
+        binding.idoor.setOnLongClickListener {
+            val clipText = "Door"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -132,8 +121,8 @@ class CanvasFragment : Fragment() {
             true
         }
 
-        binding.ibCamera.setOnLongClickListener {
-            val clipText = "Camera"
+        binding.idresser.setOnLongClickListener {
+            val clipText = "Dresser"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -143,8 +132,49 @@ class CanvasFragment : Fragment() {
             true
         }
 
-        binding.ibBulb.setOnLongClickListener {
-            val clipText = "Bulb"
+        binding.ilamp.setOnLongClickListener {
+            val clipText = "Lamp"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            true
+        }
+
+        binding.ilaptop.setOnLongClickListener {
+            val clipText = "Laptop"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            true
+        }
+        binding.itable.setOnLongClickListener {
+            val clipText = "Table"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            true
+        }
+        binding.itelevision.setOnLongClickListener {
+            val clipText = "Television"
+            val item = ClipData.Item(clipText)
+            val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+            val data = ClipData(clipText, mimeTypes, item)
+
+            val dragShadowBuilder = View.DragShadowBuilder(it)
+            it.startDragAndDrop(data, dragShadowBuilder, it, 0)
+            true
+        }
+        binding.iclosedwindow.setOnLongClickListener {
+            val clipText = "Closed Window"
             val item = ClipData.Item(clipText)
             val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
             val data = ClipData(clipText, mimeTypes, item)
@@ -195,60 +225,81 @@ class CanvasFragment : Fragment() {
                 if (view is DrawingView) {
                     val destination = view as DrawingView
                     when (dragData) {
-                        "Home" -> {
+                        "Bed" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_home)
+                                resources.getDrawable(R.drawable.bed)
                             )
                         }
-                        "Snow" -> {
+                        "Chair" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_snow)
+                                resources.getDrawable(R.drawable.chair)
                             )
                         }
-                        "Water" -> {
+                        "Couch" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_water)
+                                resources.getDrawable(R.drawable.couch)
                             )
                         }
-                        "Phone" -> {
+                        "Desk" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_phone)
+                                resources.getDrawable(R.drawable.desk)
                             )
                         }
-                        "Volume" -> {
+                        "Door" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_volume_24)
+                                resources.getDrawable(R.drawable.door)
                             )
                         }
-                        "Sound" -> {
+                        "Dresser" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_sound)
+                                resources.getDrawable(R.drawable.dresser)
                             )
                         }
-                        "Camera" -> {
+                        "Lamp" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_camera)
+                                resources.getDrawable(R.drawable.floor_lamp)
                             )
                         }
-                        "Bulb" -> {
+                        "Laptop" -> {
                             destination.addIcon(
                                 event.x,
                                 event.y,
-                                resources.getDrawable(R.drawable.ic_bulb)
+                                resources.getDrawable(R.drawable.laptop)
+                            )
+                        }
+                        "Table" -> {
+                            destination.addIcon(
+                                event.x,
+                                event.y,
+                                resources.getDrawable(R.drawable.table)
+                            )
+                        }
+                        "Television" -> {
+                            destination.addIcon(
+                                event.x,
+                                event.y,
+                                resources.getDrawable(R.drawable.television)
+                            )
+                        }
+                        "Closed Window" -> {
+                            destination.addIcon(
+                                event.x,
+                                event.y,
+                                resources.getDrawable(R.drawable.window_closed_variant)
                             )
                         }
                     }

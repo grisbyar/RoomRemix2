@@ -55,63 +55,84 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/ibHome"
+                        android:id="@+id/ibed"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/brush_button"
+                        android:contentDescription="bed"
                         android:longClickable="true"
-                        android:src="@drawable/ic_home" />
+                        android:src="@drawable/bed" />
 
                     <ImageButton
-                        android:id="@+id/ibSnow"
+                        android:id="@+id/ichair"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/erase_draw_button"
+                        android:contentDescription="chair"
                         android:longClickable="true"
-                        android:src="@drawable/ic_snow" />
+                        android:src="@drawable/chair" />
 
                     <ImageButton
-                        android:id="@+id/ibWater"
+                        android:id="@+id/itable"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/undo_draw_button"
-                        android:src="@drawable/ic_water" />
+                        android:contentDescription="table"
+                        android:src="@drawable/table" />
 
                     <ImageButton
-                        android:id="@+id/ibPhone"
+                        android:id="@+id/icouch"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/redo_draw_button"
-                        android:src="@drawable/ic_phone" />
+                        android:contentDescription="couch"
+                        android:src="@drawable/couch" />
 
                     <ImageButton
-                        android:id="@+id/ibVolume"
+                        android:id="@+id/idesk"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/brush_color_button"
-                        android:src="@drawable/ic_volume_24" />
+                        android:contentDescription="desk"
+                        android:src="@drawable/desk" />
 
                     <ImageButton
-                        android:id="@+id/ibSound"
+                        android:id="@+id/idoor"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/background_image_button"
-                        android:src="@drawable/ic_sound" />
+                        android:contentDescription="door"
+                        android:src="@drawable/door" />
 
                     <ImageButton
-                        android:id="@+id/ibCamera"
+                        android:id="@+id/idresser"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/brush_color_button"
-                        android:src="@drawable/ic_camera" />
+                        android:contentDescription="dresser"
+                        android:src="@drawable/dresser" />
 
                     <ImageButton
-                        android:id="@+id/ibBulb"
+                        android:id="@+id/ilaptop"
                         style="@style/ToolsButtonTheme"
                         android:layout_marginEnd="4dp"
-                        android:contentDescription="@string/share_drawing_button"
-                        android:src="@drawable/ic_bulb" />
+                        android:contentDescription="laptop"
+                        android:src="@drawable/laptop" />
+
+                    <ImageButton
+                        android:id="@+id/ilamp"
+                        style="@style/ToolsButtonTheme"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="floor lamp"
+                        android:src="@drawable/floor_lamp" />
+
+                    <ImageButton
+                        android:id="@+id/itelevision"
+                        style="@style/ToolsButtonTheme"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="television"
+                        android:src="@drawable/television" />
+
+                    <ImageButton
+                        android:id="@+id/iclosedwindow"
+                        style="@style/ToolsButtonTheme"
+                        android:layout_marginEnd="4dp"
+                        android:contentDescription="closed window"
+                        android:src="@drawable/window_closed_variant" />
 
                 </LinearLayout>
             </HorizontalScrollView>
