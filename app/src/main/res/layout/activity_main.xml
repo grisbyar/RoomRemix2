@@ -1,173 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designbar">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ToolbarTheme" />
 
-        <ImageButton
-            android:id="@+id/draw"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/draw" />
-
-        <ImageButton
-            android:id="@+id/eraser"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/eraser" />
-
-        <ImageButton
-            android:id="@+id/delete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/delete" />
-
-        <ImageButton
-            android:id="@+id/more_options"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/more_options" />
-
+        <fragment
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/navigation"
+            tools:ignore="FragmentTagUsage" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/design_bar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="612dp"
-        android:background="@drawable/borderoutline"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/couch"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/couch"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/table"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/table"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/bed"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/bed"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/chair"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/chair"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/dresser"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/dresser"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/television"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/television" />
-
-        <ImageButton
-            android:id="@+id/lamp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/floor_lamp"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/laptop"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/laptop"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/door"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/door"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/window"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/window_closed_variant"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageButton
-            android:id="@+id/arrow_forward"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/arrow_forward" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_above="@+id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <include layout="@layout/draw_view" />
-
-
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

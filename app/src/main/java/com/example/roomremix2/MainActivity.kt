@@ -1,7 +1,6 @@
 package com.example.roomremix2
 
 import android.content.ClipData
-import android.content.ClipDescription
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
@@ -17,7 +16,6 @@ import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.roomremix2.DrawView.Companion.colorList
 import com.example.roomremix2.DrawView.Companion.currentColor
 import com.example.roomremix2.DrawView.Companion.pathList
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         supportActionBar?.hide()
 
         val drawButton = findViewById<ImageButton>(R.id.draw);
